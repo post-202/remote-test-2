@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Russian Winter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 100vh;
+            margin: 0 auto;
+            max-width: 1000px;
+            background-color: white;
+            color: black;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        header {
+            width: 100%;
+            padding: 10px 20px;
+            background-color: yellow;
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .toggle-button {
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: yellow;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.5s ease, color 0.5s ease;
+            align-self: flex-end;
+        }
+
+        .toggle-button:hover {
+            background-color: white;
+        }
+
+        p {
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        footer {
+            width: 100%;
+            padding: 10px 20px;
+            background-color: yellow;
+            color: black;
+            text-align: center;
+            /*
+           
+*/
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">| Logo |</div>
+        <div></div>
+    </header>
+    <main>
+        <h2>Русская Зима</h2>
+        <button class="toggle-button" id="toggle-theme">сменить тему</button>
+        <p> Русская зима - это время года резких контрастов и захватывающей дух красоты. Сельская местность покрыта толстым слоем снега, превращающим пейзаж в сверкающую страну чудес. Деревья стоят неподвижно, их ветви отяжелели от инея, создавая волшебную атмосферу. Несмотря на холод, жизнь продолжается, дети играют в снегу, а семьи собираются у теплых очагов. Ночи здесь длинные и безмятежные, их освещает мягкий лунный свет, падающий на снег. Это время года, хотя и суровое, дарит ощущение покоя и напоминает о невероятной стойкости природы. Зима в России - это не только время холода и снега, но и период, богатый традициями и праздниками. От празднования Нового года до православного Рождества воздух наполнен радостью и надеждой на благополучный предстоящий год. Катание на коньках, санках и знаменитая русская баня становятся неотъемлемой частью повседневной жизни, объединяя общины. Деревни, с их разноцветными деревянными домиками, уютно расположившимися среди нетронутой белизны, кажутся словно вышедшими из сказки. История русской зимы вдохновила бесчисленное множество произведений искусства, литературы и музыки, изображающих ее одновременно как время борьбы и глубокой красоты.
+            <br>
+            <br> Стойкость русского народа очевидна в самые суровые зимы. Холод сформировал дух нации - от военных побед в истории до повседневной стойкости. Такие города, как Москва и Санкт-Петербург, становятся особенно очаровательными с их архитектурными чудесами, укрытыми снегом, и улицами, украшенными праздничными огнями. На рынках царит оживление, здесь предлагают такие горячие угощения, как блины, горячий чай и жареные каштаны. Снежинки, мягко падающие с неба, создают поэтическую атмосферу, заставляя ценить тихие моменты, которые часто дарит зима. Бескрайние просторы дикой природы России демонстрируют дикую красоту природы, от ледяных вод озера Байкал до заснеженных вершин Кавказских гор. Дикие животные, такие как сибирские тигры и песцы, процветают в этих условиях, демонстрируя силу и приспособляемость, необходимые для выживания. Зимние виды спорта также являются важной частью российской культуры, а катание на лыжах и хоккей с шайбой - национальными развлечениями. Иностранные туристы стекаются сюда, чтобы ощутить волшебство русской зимы, привлеченные ее уникальным сочетанием природной красоты и культурного богатства.
+            <br>
+            <br> С приходом весны воспоминания о зиме остаются в сердцах тех, кто пережил ее чудеса. Истории выживания, празднования и размышлений служат свидетельством прочной связи между русским народом и окружающей его средой. Зима, со всеми ее сложностями и великолепием, - это не просто время года, но и определяющая черта российской самобытности.
+        </p>
+    </main>
+    <footer>| Logo - site | Copyright 2025 |</footer>
+    <script>
+        const toggleButton = document.getElementById('toggle-theme');
+        const body = document.body;
+        let isLightTheme = true;
+        toggleButton.addEventListener('click', () => {
+            isLightTheme = !isLightTheme;
+            body.style.backgroundColor = isLightTheme ? 'white' : 'black';
+            body.style.color = isLightTheme ? 'black' : 'white';
+            toggleButton.style.backgroundColor = isLightTheme ? 'yellow' : 'white';
+            toggleButton.style.color = isLightTheme ? 'black' : 'black';
+        });
+
+    </script>
+</body>
+
+</html>
