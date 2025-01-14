@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 100vh;
+            margin: 0 auto;
+            max-width: 1000px;
+            background: linear-gradient(to bottom, blue 50%, red 50%);
+            transition: background 0.5s ease;
+            overflow: hidden;
+        }
+
+        header {
+            width: 100%;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            align-items: center;
+        }
+
+        header .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        main img {
+            max-width: 100%;
+            height: auto;
+            max-height: 400px;
+            transition: opacity 0.5s ease;
+        }
+
+        main button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.5s ease;
+        }
+
+        main button:hover {
+            background-color: #555;
+        }
+
+        footer {
+            width: 100%;
+            padding: 10px 20px;
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">| Logo |</div>
+    </header>
+    <main> <img id="main-image" src="https://via.placeholder.com/300x400" alt="Placeholder Image">
+        <button id="action-button">Change the Picture</button>
+    </main>
+    <footer>| Logo - site | Copyright 2025 |</footer>
+    <script>
+        const button = document.getElementById('action-button');
+        const body = document.body;
+        const image = document.getElementById('main-image');
+        const images = [
+            "https://i.ibb.co/Wv6mxxv/the-sun-white.png", "https://i.ibb.co/nnMNxQz/the-moon-black.png"
+        ];
+        let currentImageIndex = 0;
+        let currentColor = true;
+        button.addEventListener('click', () => {
+            // Change background color
+            currentColor = !currentColor;
+            body.style.background = currentColor ? 'linear-gradient(to bottom, blue 50%, red 50%)' : 'linear-gradient(to bottom, orange 50%, green 50%)';
+            // Change image
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            image.style.opacity = 0;
+            setTimeout(() => {
+                image.src = images[currentImageIndex];
+                image.style.opacity = 1;
+            }, 500);
+            // Change button color
+            button.style.backgroundColor = currentColor ? '#0000FF' : '#f7b731';
+        });
+
+    </script>
+</body>
+
+</html>
